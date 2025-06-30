@@ -284,7 +284,7 @@ const Panjikaran: React.FC<PanjikaranProps> = ({ user, onProceedToForm }) => {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200">
               
               {/* Step Header */}
-              <div className="border-b border-gray-200 px-8 py-6">
+              <div className="border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-6">
                 <div className="flex items-center space-x-4">
                   <div className="bg-orange-100 p-3 rounded-full">
                     <FileText className="h-8 w-8 text-orange-600" />
@@ -296,33 +296,33 @@ const Panjikaran: React.FC<PanjikaranProps> = ({ user, onProceedToForm }) => {
                 </div>
               </div>
 
-              <div className="p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 {/* Instructions */}
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8">
                   <h3 className="text-xl font-semibold text-blue-900 mb-4">
                     फॉर्म भरने से पहले, निम्नलिखित संलग्नक की सॉफ्टकॉपी इकट्ठा करें:
                   </h3>
                   
                   {/* Document List */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                  <div className="grid grid-cols-1 gap-3 mb-6">
                     {documents.map((document, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-3 bg-white rounded-lg border border-blue-100">
+                      <div key={index} className="flex items-center space-x-3 p-3 sm:p-4 bg-white rounded-lg border border-blue-100">
                         <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-800 font-medium text-sm">{document}</span>
+                        <span className="text-gray-800 font-medium text-sm sm:text-base">{document}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* CA Certificate Download */}
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
-                    <p className="text-gray-800 font-medium mb-3">
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 sm:p-5 mb-6">
+                    <p className="text-gray-800 font-medium mb-3 text-sm sm:text-base">
                       सी. ए. सर्टिफिकेट का प्रारूप डाउनलोड करने के लिए यहां क्लिक करें:
                     </p>
                     <a
                       href="https://upidadv.up.gov.in/Docs/CA-declaration-letter.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200"
+                      className="inline-flex items-center space-x-2 bg-orange-600 text-white px-4 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200 text-sm sm:text-base font-medium"
                     >
                       <Download className="h-4 w-4" />
                       <span>CA सर्टिफिकेट प्रारूप डाउनलोड करें</span>
@@ -331,18 +331,18 @@ const Panjikaran: React.FC<PanjikaranProps> = ({ user, onProceedToForm }) => {
                 </div>
 
                 {/* Important Notes */}
-                <div className="bg-red-50 border border-red-200 rounded-xl p-6 mb-8">
-                  <h4 className="text-lg font-semibold text-red-900 mb-4">नोट:</h4>
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8">
+                  <h4 className="text-lg font-semibold text-red-900 mb-4">महत्वपूर्ण नोट:</h4>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
                       <span className="text-red-600 font-bold">➔</span>
-                      <p className="text-red-800">
+                      <p className="text-red-800 text-sm sm:text-base">
                         सभी संलग्नक की सॉफ्टकॉपी <strong>.pdf format</strong> में होनी चाहिए, और साइज <strong>1MB से कम</strong> होनी चाहिए।
                       </p>
                     </div>
                     <div className="flex items-start space-x-3">
                       <span className="text-red-600 font-bold">➔</span>
-                      <p className="text-red-800">
+                      <p className="text-red-800 text-sm sm:text-base">
                         सभी संलग्नको की कॉपी <strong>स्वप्रमाणित व स्वच्छप्रतियो</strong> में होनी चाहिए।
                       </p>
                     </div>
@@ -350,7 +350,7 @@ const Panjikaran: React.FC<PanjikaranProps> = ({ user, onProceedToForm }) => {
                 </div>
 
                 {/* Confirmation Checkbox */}
-                <div className="bg-gray-50 rounded-xl p-6 mb-8">
+                <div className="bg-gray-50 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8">
                   <label className="flex items-start space-x-4 cursor-pointer">
                     <input
                       type="checkbox"
@@ -359,10 +359,10 @@ const Panjikaran: React.FC<PanjikaranProps> = ({ user, onProceedToForm }) => {
                       className="mt-1 h-5 w-5 text-orange-600 border-gray-300 rounded focus:ring-orange-500 focus:ring-2"
                     />
                     <div className="flex-1">
-                      <p className="text-gray-800 font-medium">
+                      <p className="text-gray-800 font-medium text-sm sm:text-base">
                         मैं पुष्टि करता/करती हूं कि मैंने उपरोक्त सभी आवश्यकताओं को पढ़ लिया है और मेरे पास सभी आवश्यक दस्तावेज उपलब्ध हैं।
                       </p>
-                      <p className="text-sm text-gray-600 mt-2">
+                      <p className="text-xs sm:text-sm text-gray-600 mt-2">
                         I confirm that I have read all the above requirements and have all the necessary documents available.
                       </p>
                     </div>
@@ -374,7 +374,7 @@ const Panjikaran: React.FC<PanjikaranProps> = ({ user, onProceedToForm }) => {
                   <button
                     onClick={handleProceed}
                     disabled={!hasReadAndAgreed}
-                    className={`inline-flex items-center space-x-3 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 ${
+                    className={`w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-6 sm:px-8 py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-200 ${
                       hasReadAndAgreed
                         ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 transform hover:scale-105 shadow-lg'
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -385,7 +385,7 @@ const Panjikaran: React.FC<PanjikaranProps> = ({ user, onProceedToForm }) => {
                   </button>
                   
                   {!hasReadAndAgreed && (
-                    <p className="text-sm text-gray-500 mt-3">
+                    <p className="text-xs sm:text-sm text-gray-500 mt-3 px-4">
                       कृपया पुष्टि करें कि आपने सभी आवश्यकताओं को पढ़ लिया है
                     </p>
                   )}
