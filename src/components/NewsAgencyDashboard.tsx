@@ -15,7 +15,7 @@ const NewsAgencyDashboard: React.FC<NewsAgencyDashboardProps> = ({ user, onLogou
   const renderContent = () => {
     switch (activeTab) {
       case 'home':
-        return <HomeContent />;
+        return <HomeContent onNavigateToUpload={() => setActiveTab('upload')} onNavigateToProfile={() => setActiveTab('profile')} />;
       case 'upload':
         return <UploadContent />;
       case 'profile':
@@ -48,7 +48,7 @@ const NewsAgencyDashboard: React.FC<NewsAgencyDashboardProps> = ({ user, onLogou
 };
 
 // Home Content Component
-const HomeContent: React.FC = () => (
+const HomeContent: React.FC<{ onNavigateToUpload: () => void; onNavigateToProfile: () => void }> = ({ onNavigateToUpload, onNavigateToProfile }) => (
   <div className="space-y-8">
     <div className="mb-8">
       <h2 className="text-2xl font-bold text-gray-900 mb-2 hidden lg:block">समाचार एजेंसी डैशबोर्ड</h2>
@@ -110,7 +110,10 @@ const HomeContent: React.FC = () => (
     <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200 mx-2.5">
       <h3 className="text-lg font-semibold text-gray-900 mb-4">त्वरित कार्य</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <button className="p-4 text-left border border-gray-200 rounded-lg hover:border-orange-300 hover:bg-orange-50 transition-all duration-200 group">
+        <button 
+          onClick={onNavigateToUpload}
+          className="p-4 text-left border border-gray-200 rounded-lg hover:border-orange-300 hover:bg-orange-50 transition-all duration-200 group"
+        >
           <Upload className="h-6 w-6 text-orange-500 mb-2 group-hover:scale-110 transition-transform duration-200" />
           <h4 className="font-medium text-gray-900">नया समाचार अपलोड करें</h4>
           <p className="text-sm text-gray-500 mt-1">नई समाचार सामग्री अपलोड करें</p>
@@ -122,7 +125,10 @@ const HomeContent: React.FC = () => (
           <p className="text-sm text-gray-500 mt-1">अपलोड किए गए समाचार देखें</p>
         </button>
 
-        <button className="p-4 text-left border border-gray-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-all duration-200 group">
+        <button 
+          onClick={onNavigateToProfile}
+          className="p-4 text-left border border-gray-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-all duration-200 group"
+        >
           <Settings className="h-6 w-6 text-green-500 mb-2 group-hover:scale-110 transition-transform duration-200" />
           <h4 className="font-medium text-gray-900">प्रोफ़ाइल सेटिंग्स</h4>
           <p className="text-sm text-gray-500 mt-1">अपनी प्रोफ़ाइल अपडेट करें</p>
